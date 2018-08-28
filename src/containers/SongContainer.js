@@ -1,5 +1,5 @@
 import React from 'react';
-import SongList from './components/SongList.js';
+import SongList from '../components/SongList.js';
 
 class SongContainer extends React.Component {
   constructor (props) {
@@ -16,7 +16,7 @@ class SongContainer extends React.Component {
         return res.json();
       })
       .then((songs) => {
-        this.setState({songs: songs})
+        this.setState({songs: songs.feed.entry})
       })
   }
 
