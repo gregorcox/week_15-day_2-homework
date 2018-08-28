@@ -1,4 +1,5 @@
 import React from 'react';
+import SongList from './components/SongList.js';
 
 class SongContainer extends React.Component {
   constructor (props) {
@@ -17,6 +18,14 @@ class SongContainer extends React.Component {
       .then((songs) => {
         this.setState({songs: songs})
       })
+  }
+
+  render(){
+    return (
+      <div>
+        <SongList songs={this.state.songs} />
+      </div>
+    )
   }
 
 }
